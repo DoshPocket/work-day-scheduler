@@ -7,7 +7,7 @@ I built this simple day planner with the functionality to input and save hourly 
 
 ## Deployment
 
-Deployed at: 
+Deployed at: https://doshpocket.github.io/work-day-scheduler/
 GitHub: https://github.com/DoshPocket/work-day-scheduler
 
 ## License
@@ -17,6 +17,4 @@ This build is licensed under Apache 2.0. (https://www.apache.org/licenses/LICENS
 ## How to Contribute
 Feel free to contribute further to my code within the standards of The [Contributor Covenant](https://www.contributor-covenant.org/). Happy coding!
 
-![Coding Quiz Main Page](./assets/images/main.png)
-![Coding Quiz Question Page](./assets/images/question.png)
-![Coding Quiz Highscore Page](./assets/images/highscore.png)
+![Workday Scheduler](./assets/images/scheduler.png)
