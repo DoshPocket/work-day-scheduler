@@ -4,8 +4,10 @@ const saveButton = document.querySelectorAll(".btn")
 console.log(pastPresentFutureArr)
 console.log(saveButton)
 
-$("#currentDay").text(moment().format("MMMM Do YYYY, hh:mm:ss A"));
+//date display
+$("#currentDay").text(moment().format("MMMM Do YYYY"));
 
+//change colour of textareas given it is past, present or future
 for (i=0; i < pastPresentFutureArr.length; i++) {
     let pastPresentFutureEl = pastPresentFutureArr[i];
     let currentTime = parseInt(moment().format("k"));
@@ -19,17 +21,7 @@ for (i=0; i < pastPresentFutureArr.length; i++) {
         pastPresentFutureEl.setAttribute('class', "description col-md-10 future");
     }
 }
-
-// saveButton.addEventListener
-//     saveButton.addEventListener("click", function(event) {
-//       let saveButtonVal = event.target.className.split(' ')[0];
-   
-//         console.log(saveButtonVal);
-//     });
-//      let textAreaInput = document.querySelector(".text");
-//      console.log(textAreaInput)
- 
-// for loop for buttons
+// save button to save details of event to local storage
 for (i=0; i < saveButton.length; i++) {
     let saveButtonEl = saveButton[i];
     saveButtonEl.addEventListener("click", function(event) {
@@ -44,36 +36,16 @@ for (i=0; i < saveButton.length; i++) {
         }
         let eventText = document.getElementById(idx).value;
 
-        console.log(eventText)
-   
+        console.log(eventText);
+        localStorage.setItem("eventText", JSON.stringify(eventText));
     })
- 
-    let saveButtonVal = (saveButtonEl.getAttribute("id"));
-
-  
-
 };
 
-// function renderLastRegistered() {
-//     let eventText = localStorage.getItem("eventText");
-  
-//     if (!eventText) {
-//       return;
-//     }
-  
-//     // userEmailSpan.textContent = email;
-//     // userPasswordSpan.textContent = password;
-//   }
-//     saveButton.addEventListener("click", function(event) {
-//     event.preventDefault();
-//     let eventText = document.querySelector("textarea").value;
-  
-//     if (eventText === "") {
-//       displayMessage("Error", "Empty event cannot be saved");
-//     } else {
-//       displayMessage("Saved successfully");
-  
-//       localStorage.setItem("eventText", eventText);
-//       renderLastRegistered();
-//     }
-// });
+//recall events from local storage
+function renderLastRegistered() {
+    let eventText = JSON.parse(localStorage.getItem("eventText"));
+
+    console.log(eventText);
+    console.log(localStorage.getItem("eventText"))
+}
+renderLastRegistered();
